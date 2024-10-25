@@ -70,9 +70,9 @@ public class MirrorRoomManager : NetworkRoomManager
         SteamAPI.Shutdown();
     }
 
-    public override void OnRoomServerAddPlayer(NetworkConnectionToClient conn)
+    public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
-        base.OnRoomServerAddPlayer(conn);
+        base.OnServerAddPlayer(conn);
 
         if (lobbyPlayerPrefab != null)
         {
@@ -83,6 +83,11 @@ public class MirrorRoomManager : NetworkRoomManager
         {
             Debug.LogError("Player Prefab is not assigned in the RoomManager");
         }
+    }
+
+    public override void OnRoomServerAddPlayer(NetworkConnectionToClient conn)
+    {
+        base.OnRoomServerAddPlayer(conn);
     }
 
     public void StartHosting()
