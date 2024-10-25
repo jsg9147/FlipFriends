@@ -27,6 +27,6 @@ public class LobbyItem : MonoBehaviour
     private void JoinLobby()
     {
         if (lobbyInfo != null)
-            NetworkManager.Instance.JoinLobby(lobbyInfo.LobbyID);
+            MirrorRoomManager.Instance.JoinLobby(lobbyInfo.LobbyID);
     }
 }

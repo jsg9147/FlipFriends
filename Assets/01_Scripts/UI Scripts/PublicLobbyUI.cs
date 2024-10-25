@@ -26,7 +26,7 @@ public class PublicLobbyUI : MonoBehaviour
     {
         LobbyListReset();
 
-        List<SteamLobbyInfo> lobbyInfoList = await NetworkManager.Instance.GetLobbyListAsync();
+        List<SteamLobbyInfo> lobbyInfoList = await MirrorRoomManager.Instance.GetLobbyListAsync();
 
         foreach (SteamLobbyInfo info in lobbyInfoList)
         {

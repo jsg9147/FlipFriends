@@ -25,7 +25,7 @@ public class GameModeUI : MonoBehaviour
 
     public void CreateRoom()
     {
-        NetworkManager.Instance.HostLobby();
+        MirrorRoomManager.Instance.HostLobby();
     }
 }
 

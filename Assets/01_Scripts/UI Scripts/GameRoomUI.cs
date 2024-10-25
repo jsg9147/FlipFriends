@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using Mirror;
+
 public class GameRoomUI : MonoBehaviour
 {
     private const string lobbyKeyHideStr = "**********";
@@ -24,18 +24,17 @@ public class GameRoomUI : MonoBehaviour
         }
         else
         {
-            lobbyKeyText.text = SteamLobbyManager.Instance.lobbyKeyStr;
+            lobbyKeyText.text = MirrorRoomManager.Instance.lobbyKeyStr;
         }
     }
 
     public void CopyLobbyKey()
     {
-        GUIUtility.systemCopyBuffer = SteamLobbyManager.Instance.lobbyKeyStr; // 텍스트를 클립보드에 복사
+        GUIUtility.systemCopyBuffer = MirrorRoomManager.Instance.lobbyKeyStr; // 텍스트를 클립보드에 복사
     }
 
     public void ExitRoom()
     {
-        NetworkManager.Instance.LeaveLobby();
-        NetworkRoomManager.singleton.StopHost();
+        MirrorRoomManager.Instance.LeaveLobby();
     }
 }
